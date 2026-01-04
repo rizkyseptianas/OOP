@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="detail-container">
+    <div class="detail-image">
+        <img src="{{ product.image }}" alt="{{ product.title }}">
+    </div>
+    <div class="detail-info">
+        <h1>{{ product.title }}</h1>
+        <p class="category">Kategori: {{ product.category }}</p>
+        <p class="description">{{ product.description }}</p>
+        <h2 class="price">${{ product.price }}</h2>
+        <a href="/" class="btn-back">← Back to Catalog</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok | Premium Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <h1 class="logo"><a href="/">KELOMPOK<span>.</span>STORE</a></h1>
+            <div class="categories-bar">
+                <a href="/" class="cat-item">All Products</a>
+                <a href="/category/electronics" class="cat-item">Electronics</a>
+                <a href="/category/jewelery" class="cat-item">Jewelery</a>
+                <a href="/category/men" class="cat-item">Men</a>
+                <a href="/category/women" class="cat-item">Women</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KELOMPOK — UAS PEMROGRAMAN ORIENTASI OBJEK</p>
+    </footer>
+</body>
+</html>
