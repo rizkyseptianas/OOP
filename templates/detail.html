@@ -10,6 +10,9 @@
         <p class="category">Kategori: {{ product.category }}</p>
         <p class="description">{{ product.description }}</p>
         <h2 class="price">${{ product.price }}</h2>
+        <a href="{{ url_for('add_to_cart', product_id=product.id) }}" class="btn-action">
+            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+        </a>
         <a href="/" class="btn-back">← Back to Catalog</a>
     </div>
 </div>

@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="sort-bar">
+    <a href="{{ url_for('index', sort='price_asc') }}">Harga Rendah → Tinggi</a>
+    <a href="{{ url_for('index', sort='price_desc') }}">Harga Tinggi → Rendah</a>
+</div>
 <div class="product-grid">
     {% for product in products %}
-    <a href="{{ url_for('detail', product_id=product.id) }}" class="card">
-        <img src="{{ product.image }}" alt="{{ product.title }}">
-        <h3>{{ product.title }}</h3>
+    <div class="card">
+        <a href="{{ url_for('detail', product_id=product.id) }}">
+            <img src="{{ product.image }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+        </a>
         <p class="price">${{ product.price }}</p>
-        <div class="btn-action">View Details</div>
-    </a>
+        <a href="{{ url_for('add_to_cart', product_id=product.id) }}" class="btn-action">
+            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+        </a>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
